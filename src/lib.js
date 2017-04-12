@@ -2,7 +2,7 @@
 
 module.exports = handler => async (req, res, next) => {
   try {
-    await handler(req, res);
+    await handler(req, res, next);
     if (next) {
       next();
     }
