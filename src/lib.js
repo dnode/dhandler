@@ -11,7 +11,14 @@ module.exports = handler => async (req, res, next) => {
       next(e);
     }
     if (!res.headersSent) {
-      res.sendStatus(e.status || 500);
+      const status = e.status || 500;
+      if (e.toString) {
+        res.status(status).send(e.toString());
+      } else if (e.message) {
+        res.status(status).send(e.message);
+      } else {
+        res.sendStatus(status);
+      }
     }
   }
 };
