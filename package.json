@@ -1,6 +1,6 @@
 {
   "name": "dhandler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unhandled errors in an express handler results in an 500er response",
   "license": "MIT",
   "homepage": "http://github.com/dnode/dhandler",
